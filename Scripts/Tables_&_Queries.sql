@@ -70,6 +70,22 @@ FROM employees AS emp
 INNER JOIN dept_emp AS DE ON emp.emp_no = DE.emp_no
 INNER JOIN department AS dept ON DE.dept_no = dept.dept_no;
 
+SELECT first_name
+	  ,last_name
+	  ,sex
+FROM employees
+	WHERE first_name = 'Hercules'
+		AND LEFT(last_name, 1) = 'B';
+		
+SELECT emp.emp_no
+	  ,emp.last_name
+	  ,emp.first_name
+	  ,dept.dept_name
+FROM employees AS emp
+INNER JOIN dept_emp AS DE ON emp.emp_no = DE.emp_no
+INNER JOIN department AS dept ON DE.dept_no = dept.dept_no
+	WHERE dept.dept_name = 'Sales';
+		
 
 
 
