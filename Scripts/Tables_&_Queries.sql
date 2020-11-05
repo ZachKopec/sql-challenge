@@ -70,33 +70,33 @@ FROM employees AS emp
 INNER JOIN dept_emp AS DE ON emp.emp_no = DE.emp_no
 INNER JOIN department AS dept ON DE.dept_no = dept.dept_no;
 
-SELECT first_name
-	  ,last_name
-	  ,sex
+SELECT first_name AS Employee_First_Name
+	  ,last_name AS Employee_Last_Name
+	  ,sex AS Employee_Sex
 FROM employees
 	WHERE first_name = 'Hercules'
 		AND LEFT(last_name, 1) = 'B';
 		
-SELECT emp.emp_no
-	  ,emp.last_name
-	  ,emp.first_name
-	  ,dept.dept_name
+SELECT emp.emp_no AS Employee_ID
+	  ,emp.last_name AS Employee_Last_Name
+	  ,emp.first_name AS Employee_First_Name
+	  ,dept.dept_name AS Department_Name
 FROM employees AS emp
 INNER JOIN dept_emp AS DE ON emp.emp_no = DE.emp_no
 INNER JOIN department AS dept ON DE.dept_no = dept.dept_no
 	WHERE dept.dept_name = 'Sales';
 	
-SELECT emp.emp_no
-	  ,emp.last_name
-	  ,emp.first_name
-	  ,dept.dept_name
+SELECT emp.emp_no AS Employee_ID
+	  ,emp.last_name AS Employee_Last_Name
+	  ,emp.first_name AS Employee_First_Name
+	  ,dept.dept_name AS Department_Name
 FROM employees AS emp
 INNER JOIN dept_emp AS DE ON emp.emp_no = DE.emp_no
 INNER JOIN department AS dept ON DE.dept_no = dept.dept_no
 	WHERE dept.dept_name = 'Sales'
 		OR dept.dept_name = 'Development';
 		
-SELECT last_name
+SELECT last_name AS Employee_Last_Name
 	  ,COUNT(last_name) AS Last_Name_Count
 FROM employees
 	GROUP BY last_name
